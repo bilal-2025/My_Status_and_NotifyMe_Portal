@@ -50,6 +50,13 @@ const AdTechPriority = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Validate selection: require user to pick Yes or No
+    if (!adTechPriority) {
+      window.alert('Please select priority (Yes or No)');
+      return;
+    }
+
     setLoading(true);
     setError(null); // Reset error state
 
@@ -86,34 +93,30 @@ const AdTechPriority = () => {
         Set the AdTech to Top Priority
       </p>
       <form onSubmit={handleSubmit}>
-        <div style={{marginBottom:12}}>
-          <label style={{marginRight:8}}>Channel:</label>
-          <label style={{marginRight:8}}><input type="radio" value="mystatus" checked={channel==='mystatus'} onChange={(e)=>{ setChannel(e.target.value); sessionStorage.setItem('channel', e.target.value); }}/> My Status</label>
-          <label><input type="radio" value="nm" checked={channel==='nm'} onChange={(e)=>{ setChannel(e.target.value); sessionStorage.setItem('channel', e.target.value); }}/> Notify Me</label>
+        <div style={{marginBottom:12, display:'flex', alignItems:'center', gap:10}}>
+          <div style={{color:'#fff'}}>Channel:</div>
+          <div className="channel-toggle" role="radiogroup" aria-label="Channel">
+            <input type="radio" id="adtech-channel-mystatus" name="channel" value="mystatus" checked={channel==='mystatus'} onChange={(e)=>{ setChannel(e.target.value); sessionStorage.setItem('channel', e.target.value); }} />
+            <label htmlFor="adtech-channel-mystatus" className="channel-option">My Status</label>
+
+            <input type="radio" id="adtech-channel-nm" name="channel" value="nm" checked={channel==='nm'} onChange={(e)=>{ setChannel(e.target.value); sessionStorage.setItem('channel', e.target.value); }} />
+            <label htmlFor="adtech-channel-nm" className="channel-option">Notify Me</label>
+          </div>
         </div>
+
         <div className="mt-4">
-          <label>
-            <input
-              type="radio"
-              value="yes"
-              checked={adTechPriority === 'yes'}
-              onChange={handleSelectionChange}
-            />
-            Yes
-          </label>
-          <label className="ml-4">
-            <input
-              type="radio"
-              value="no"
-              checked={adTechPriority === 'no'}
-              onChange={handleSelectionChange}
-            />
-            No
-          </label>
+          <div className="segmented-toggle" role="radiogroup" aria-label="AdTech Priority">
+            <input type="radio" id="adtech-yes" name="adtech-priority" value="yes" checked={adTechPriority === 'yes'} onChange={handleSelectionChange} />
+            <label htmlFor="adtech-yes" className="segmented-option">Yes</label>
+
+            <input type="radio" id="adtech-no" name="adtech-priority" value="no" checked={adTechPriority === 'no'} onChange={handleSelectionChange} />
+            <label htmlFor="adtech-no" className="segmented-option">No</label>
+          </div>
         </div>
-        <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">
-          Submit
-        </button>
+
+        <div className="mt-4">
+          <button type="submit" className="app-button">Submit</button>
+        </div>
         {loading && <p className="mt-2">Submitting...</p>}
         {error && <p className="mt-2 text-red-500">{error}</p>}
       </form>

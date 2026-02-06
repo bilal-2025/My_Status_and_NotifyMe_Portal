@@ -94,3 +94,68 @@
   height: 100%;
   overflow: hidden;
 }
+
+/* UI: channel toggle and segmented controls */
+.channel-toggle{
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  padding: 4px;
+  border-radius: 999px;
+  gap: 6px;
+}
+.channel-toggle input[type="radio"]{ display:none; }
+.channel-option{
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #dbeafe; /* light blue */
+  cursor: pointer;
+  font-weight: 700;
+}
+.channel-option:hover{ background: rgba(255,255,255,0.03); }
+.channel-toggle input[type="radio"]:checked + .channel-option{
+  background: #ffffff;
+  color: #0b3a57;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+}
+
+.segmented-toggle{
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0,0,0,0.03);
+  padding: 4px;
+  border-radius: 999px;
+  gap: 6px;
+}
+.segmented-toggle input[type="radio"]{ display:none; }
+.segmented-option{
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #dbeafe; /* light text for unselected */
+  cursor: pointer;
+  font-weight: 700;
+  background: rgba(11,58,87,0.9); /* darker non-selected */
+}
+.segmented-toggle input[type="radio"]:checked + .segmented-option{
+  background: #ffffff; /* selected is brighter */
+  color: #0b3a57; /* dark selected text */
+  box-shadow: 0 8px 24px rgba(2,6,23,0.16);
+  transform: translateY(-1px);
+}
+
+/* polished app button */
+.app-button{
+  background: #095a8f; /* darker by default */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 140ms ease, transform 120ms ease, box-shadow 140ms ease;
+}
+.app-button:hover{
+  background: #0b67a3; /* brighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11,103,163,0.18);
+}

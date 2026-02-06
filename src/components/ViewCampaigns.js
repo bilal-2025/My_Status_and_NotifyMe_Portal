@@ -145,9 +145,16 @@ function ViewCampaigns() {
       <div className='border-b py-3 pl-3 text-white' style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
         <div>Campaigns</div>
         <div style={{paddingRight:16}}>
-          <label style={{color:'#fff', marginRight:8}}>Channel:</label>
-          <label style={{color:'#fff', marginRight:8}}><input type='radio' name='channel_view' value='mystatus' checked={channel==='mystatus'} onChange={handleChannelChange}/> My Status</label>
-          <label style={{color:'#fff'}}><input type='radio' name='channel_view' value='nm' checked={channel==='nm'} onChange={handleChannelChange}/> Notify Me</label>
+          <div style={{display:'flex', alignItems:'center', gap:10}}>
+            <div style={{color:'#fff'}}>Channel:</div>
+            <div className="channel-toggle" role="radiogroup" aria-label="Channel">
+              <input type='radio' id='view-channel-mystatus' name='channel_view' value='mystatus' checked={channel==='mystatus'} onChange={handleChannelChange} />
+              <label htmlFor='view-channel-mystatus' className='channel-option'>My Status</label>
+
+              <input type='radio' id='view-channel-nm' name='channel_view' value='nm' checked={channel==='nm'} onChange={handleChannelChange} />
+              <label htmlFor='view-channel-nm' className='channel-option'>Notify Me</label>
+            </div>
+          </div>
         </div>
       </div>
 
