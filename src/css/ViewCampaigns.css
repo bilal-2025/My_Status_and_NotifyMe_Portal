@@ -1,0 +1,167 @@
+/* Container for the entire row */
+tr {
+    /* border: 1px solid black; */
+    /* Border for the entire row */
+    margin-bottom: 10px;
+    /* Add some spacing between rows */
+    position: relative;
+    /* Make position relative for absolute positioning inside */
+}
+
+/* Error message styling */
+.Error {
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    background-color: #4caf50;
+    /* Green background color */
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: opacity 0.3s;
+}
+
+/* Campaign name styling */
+td {
+    /* border: 1px solid black; */
+
+    /* Border for the cell */
+    padding: 10px 38px;
+    /* Add some padding */
+    position: relative;
+    /* Make position relative for absolute positioning inside */
+}
+
+/* Audio player styling */
+span.mr-32 {
+    margin-right: 32px;
+}
+
+/* Switch (checkbox) styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* Styling for active status */
+label.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styling for Edit and Delete buttons */
+.ml-auto.flex {
+    margin-left: auto;
+    display: flex;
+}
+
+/* Styling for the Download button */
+.ml-3.relative {
+    margin-left: 3px;
+    position: relative;
+}
+
+/* Styling for the trash icon */
+.trashIcon {
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.text-white {
+    text-align: center;
+}
+
+/* Styling for rotating lines */
+.RotatingLines {
+    margin-left: 3px;
+    position: relative;
+}
+
+/* Styling for the Download button icon */
+.fa-download {
+    cursor: pointer;
+}
+
+/* Styling for the Edit Modal */
+.EditModal {
+    /* Add styles for your modal if necessary */
+}
+
+
+
+/* General Table Styles */
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+    margin: 20px; /* Add some margin around the table */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+  }
+  
+  th, td {
+    padding: 12px 15px; /* Add padding for a better look */
+    text-align: left; /* Align text to the left */
+    
+    transition: background-color 0.3s; /* Smooth background change */
+    word-wrap: break-word; /* Allow long words to break */
+    overflow-wrap: break-word; /* Similar to word-wrap */
+    max-width: 250px; /* Set a max width for the cells */
+    white-space: normal; /* Allow wrapping of text */
+  }
+  
+  /* Change background color on hover */
+  tr:hover {
+    background-color: #f1f1f1; /* Light gray background on row hover */
+  }
+  
+  /* Responsive Handling */
+  @media (max-width: 768px) {
+    th, td {
+      display: block; /* Make each cell a block for smaller screens */
+      width: 100%; /* Full width for each cell */
+      box-sizing: border-box; /* Ensure padding is included in width */
+    }
+  }
+  
+  /* Specific column styles */
+  td:nth-child(2) {
+    min-width: 200px; /* Set a minimum width for audio player column */
+  }
+  

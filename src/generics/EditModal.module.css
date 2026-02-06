@@ -1,0 +1,80 @@
+.edit-modal-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(34, 34, 34, 0.9);
+}
+
+.edit-modal-container{
+    position: fixed;
+    max-width: 60rem;
+    min-width: 48rem;
+    top: 50%;
+    left: 50% ;
+    transform: translate(-50%, -50%);
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.campWrapper {
+    border: 1px solid rgba(167, 167, 167, 0.9);
+    width: 100%;
+    height: 3rem;
+    border-radius: .15rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:2fr repeat(4, 1fr) ;
+    height: 100%;
+    background-color: rgba(71, 163, 255, 0.742);
+    /* background-color: rgba(255, 175, 175, 0.742); */
+    align-items: center;
+    padding-left: .2rem;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.editDateTimeFrom{
+    width: 10rem;
+    padding: .2rem;
+    border-radius: .2rem;
+}
+
+.editDateTimeDiv{
+    display: flex;
+}
+
+.editDateTimeTo{
+    width: 10rem;
+    padding: .2rem;
+    border-radius: .2rem;
+}
+
+.doneBtnDiv{
+    margin-left: auto;
+}
+
+.doneBtn{
+    padding: .3rem;
+    border: 1px solid rgba(255, 255, 255, 0.653);
+    border-radius: 3px;
+}
+
+.doneBtn:hover{
+    background-color: rgba(82, 168, 255, 0.742);
+}
+.doneBtn:active{
+    background-color: rgba(73, 163, 253, 0.742);
+}
+
+.edit-modal-btn{
+    padding: .5rem;
+    width: 4rem;
+    font-weight: bold;
+}

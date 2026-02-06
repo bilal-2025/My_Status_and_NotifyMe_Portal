@@ -1,0 +1,96 @@
+
+.sidebar-height{
+  height: calc(100vh - 3.5rem);
+}
+
+.viewCampaign{
+  font-size: 2rem;
+  color: red;
+}
+
+.main-bg{
+  min-height: calc(100vh - 3.5rem);
+}
+
+#logoutBtn:active{
+  transform: scale(1.07);
+}
+
+
+#logout.show {
+  opacity: 1;
+  visibility: visible;
+}
+.nonActiveLine{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.nonActiveLine::before{
+  content: "";
+  border: 1px solid white;
+  position: absolute;
+  width: 46%;
+  top: 13px;
+  left: -45px;
+}
+.nonActiveLine::after{
+  content: "";
+  border: 1px solid white;
+  width: 46%;
+  position: absolute;
+  top: 13px;
+  right: -45px;
+}
+
+.triangle-up{
+  width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+}
+
+
+.audioClass {
+  position: relative;
+  margin-left: 1.5rem;
+  width: 170px;
+  height: 30px;
+  z-index: 100;
+}
+
+.trashIcon{
+  color: red;
+  border: 1px solid rgb(196, 196, 196);
+  padding: 5px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.trashIcon:active{
+  background-color: rgb(230, 230, 230);
+}
+
+.background-clr{
+  background-color: #004f90;
+}
+
+.campaigns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnActive{
+  background-color: #fff;
+  color: black !important;
+}
+
+.classs{
+  height: 100%;
+  overflow: hidden;
+}
